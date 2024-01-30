@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="-4094" y="60"/>
         </scene>
-        <!--Recipie Controller-->
+        <!--Recipe Controller-->
         <scene sceneID="PFq-uG-jn9">
             <objects>
-                <viewController restorationIdentifier="RecipieController" storyboardIdentifier="RecipieController" id="fG6-0H-DI0" customClass="RecipieController" customModule="recipe_recs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fG6-0H-DI0" customClass="RecipeController" customModule="recipe_recs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BGB-mB-CiS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +74,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click &quot;find recipie&quot; for your next meal!" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpp-xc-IWl">
                                 <rect key="frame" x="16" y="361" width="361" height="457"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -84,7 +84,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Find Recipie"/>
                                 <connections>
-                                    <action selector="find_recipie:" destination="fG6-0H-DI0" eventType="touchUpInside" id="zQF-31-fXc"/>
+                                    <action selector="find_recipe" destination="fG6-0H-DI0" eventType="touchUpInside" id="Hs8-Tx-gFd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggd-cm-kgc">
@@ -104,7 +104,7 @@
                     <connections>
                         <outlet property="ingredient_1" destination="KUx-Ak-CCB" id="ViZ-SA-wKi"/>
                         <outlet property="ingredient_2" destination="I3f-GY-DxK" id="u4i-dV-fXv"/>
-                        <outlet property="recipie_print" destination="kpp-xc-IWl" id="Hee-Ry-e80"/>
+                        <outlet property="recipe_print" destination="kpp-xc-IWl" id="BUS-cX-F6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W87-Ny-LgO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

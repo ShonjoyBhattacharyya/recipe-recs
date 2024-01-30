@@ -9,7 +9,7 @@ import UIKit
 import EventKit
 import EventKitUI
 
-class RecipieController: UIViewController, EKEventEditViewDelegate{
+class RecipeController: UIViewController, EKEventEditViewDelegate{
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
        controller.dismiss(animated: true, completion: nil)
     }
@@ -23,18 +23,10 @@ class RecipieController: UIViewController, EKEventEditViewDelegate{
     
     @IBOutlet weak var ingredient_1: UITextField!
     @IBOutlet weak var ingredient_2: UITextField!
-    @IBOutlet weak var recipie_print: UILabel!
+    @IBOutlet weak var recipe_print: UILabel!
+    var curr_recipe = ""
     
-    @IBAction func find_recipie(_ sender: Any) {
-        let ing_1 : String = ingredient_1.text!
-        let ing_2 : String = ingredient_2.text!
-        let question = "Find me a recipie for a meal that uses " + ing_1 + " and " + ing_2
-        print(question)
-        recipie_print.text = question
-        
-        
-        
-    }
+    
     @IBAction func add_to_calendar(_ sender: Any) {
         let store = EKEventStore()
         store.requestWriteOnlyAccessToEvents( completion: {(granted, error) in
@@ -42,7 +34,7 @@ class RecipieController: UIViewController, EKEventEditViewDelegate{
                     let event = EKEvent(eventStore: store)
                 event.title = "Cook dish with " + self.ingredient_1.text! + " and " + self.ingredient_2.text!
                     event.url = URL(string: "https://apple.com")
-                event.notes = self.recipie_print.text!
+                event.notes = self.curr_recipe
                     event.isAllDay = true
                     let eventController = EKEventEditViewController()
                     eventController.event = event
@@ -54,6 +46,45 @@ class RecipieController: UIViewController, EKEventEditViewDelegate{
             }
         })
     }
+    @IBAction func find_recipe() {
+        let ing_1_arr = ingredient_1.text!.components(separatedBy: " ")
+        let ing_2_arr = ingredient_2.text!.components(separatedBy: " ")
+        var ing_1 = ""
+        var ing_2 = ""
+        for i in ing_1_arr{
+            ing_1 += i.capitalized
+        }
+        for j in ing_2_arr{
+            ing_2 += j.capitalized
+        }
+        
+        let url_string = "https://chat-cb5srbnobq-uc.a.run.app/?prompt=" + "findAHealthyRecipeWithTheIngredients" + ing_1 + "And" + ing_2
+        print(url_string)
+        guard let url = URL(string: url_string) else {
+            print("Invalid URL")
+            return
+        }
+        let request = URLRequest(url: url)
+    
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+        if let decodedResponse = try? JSONDecoder().decode(Response.self, from: data) {
+            DispatchQueue.main.async {
+                self.curr_recipe = decodedResponse.reply
+                self.recipe_print.text = self.curr_recipe
+            }
+        }
+            }
+        }.resume()
+    }
+
+    struct Response: Codable {
+        var reply: String
+    }
+    }
+
+    
+    
     
     
         /*
@@ -66,5 +97,5 @@ class RecipieController: UIViewController, EKEventEditViewDelegate{
          }
          */
         
-    }
+    
 
