@@ -17,7 +17,6 @@
 		B3121A922B6849A3005B6663 /* recipe_recsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3121A912B6849A3005B6663 /* recipe_recsUITests.swift */; };
 		B3121A942B6849A3005B6663 /* recipe_recsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3121A932B6849A3005B6663 /* recipe_recsUITestsLaunchTests.swift */; };
 		B3FEF28E2B687A9200A227CC /* RecipieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEF28D2B687A9200A227CC /* RecipieController.swift */; };
-		B3FEF2922B68A8EC00A227CC /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEF2912B68A8EC00A227CC /* CalendarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		B3121A912B6849A3005B6663 /* recipe_recsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipe_recsUITests.swift; sourceTree = "<group>"; };
 		B3121A932B6849A3005B6663 /* recipe_recsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipe_recsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B3FEF28D2B687A9200A227CC /* RecipieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipieController.swift; sourceTree = "<group>"; };
-		B3FEF2912B68A8EC00A227CC /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,6 @@
 		B3121A642B68499E005B6663 = {
 			isa = PBXGroup;
 			children = (
-				B3FEF2912B68A8EC00A227CC /* CalendarController.swift */,
 				B3121A6F2B68499E005B6663 /* recipe-recs */,
 				B3121A862B6849A2005B6663 /* recipe-recsTests */,
 				B3121A902B6849A3005B6663 /* recipe-recsUITests */,
@@ -274,7 +271,6 @@
 			files = (
 				B3121A752B68499E005B6663 /* ViewController.swift in Sources */,
 				B3121A712B68499E005B6663 /* AppDelegate.swift in Sources */,
-				B3FEF2922B68A8EC00A227CC /* CalendarController.swift in Sources */,
 				B3121A732B68499E005B6663 /* SceneDelegate.swift in Sources */,
 				B3FEF28E2B687A9200A227CC /* RecipieController.swift in Sources */,
 			);

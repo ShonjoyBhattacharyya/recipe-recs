@@ -111,22 +111,6 @@
             </objects>
             <point key="canvasLocation" x="-2961.0687022900761" y="59.859154929577471"/>
         </scene>
-        <!--Calendar Controller-->
-        <scene sceneID="Zxg-M8-Kyv">
-            <objects>
-                <viewController storyboardIdentifier="CalendarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hVv-Vl-8Rr" customClass="CalendarController" customModule="recipe_recs" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wny-xJ-uTB">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ndf-Ns-Ko9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Jjc-Ve-Vgn"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cEl-Jc-tGT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2009" y="55"/>
-        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
