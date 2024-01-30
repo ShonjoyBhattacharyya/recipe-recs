@@ -25,6 +25,7 @@ class RecipeController: UIViewController, EKEventEditViewDelegate{
     @IBOutlet weak var ingredient_2: UITextField!
     @IBOutlet weak var recipe_print: UILabel!
     var curr_recipe = ""
+    var url_string = ""
     
     
     @IBAction func add_to_calendar(_ sender: Any) {
@@ -33,9 +34,9 @@ class RecipeController: UIViewController, EKEventEditViewDelegate{
             DispatchQueue.main.async {
                     let event = EKEvent(eventStore: store)
                 event.title = "Cook dish with " + self.ingredient_1.text! + " and " + self.ingredient_2.text!
-                    event.url = URL(string: "https://apple.com")
                 event.notes = self.curr_recipe
-                    event.isAllDay = true
+                event.url = URL(string: self.url_string)
+                    event.isAllDay = true
                     let eventController = EKEventEditViewController()
                     eventController.event = event
                     eventController.eventStore = store
@@ -58,7 +59,7 @@ class RecipeController: UIViewController, EKEventEditViewDelegate{
             ing_2 += j.capitalized
         }
         
-        let url_string = "https://chat-cb5srbnobq-uc.a.run.app/?prompt=" + "findAHealthyRecipeWithTheIngredients" + ing_1 + "And" + ing_2
+        url_string = "https://chat-cb5srbnobq-uc.a.run.app/?prompt=" + "findAHealthyRecipeWithTheIngredients" + ing_1 + "And" + ing_2
         print(url_string)
         guard let url = URL(string: url_string) else {
             print("Invalid URL")
