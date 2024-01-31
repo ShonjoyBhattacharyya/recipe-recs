@@ -59,7 +59,7 @@ class RecipeController: UIViewController, EKEventEditViewDelegate{
             ing_2 += j.capitalized
         }
         
-        url_string = "https://chat-cb5srbnobq-uc.a.run.app/?prompt=" + "findAHealthyRecipeWithTheIngredients" + ing_1 + "And" + ing_2
+        url_string = "https://chat-cb5srbnobq-uc.a.run.app/?prompt=" + "CreateACocktailWithTheseIngredients" + ing_1 + "And" + ing_2
         print(url_string)
         guard let url = URL(string: url_string) else {
             print("Invalid URL")
