@@ -1,0 +1,1 @@
+This is a simple application where a user can input two ingredients that they have and receive a recipe they can cook with them. XCode is required to run this application. There is also a second branch, CocktailMaker, that will create a cocktail for you based on two ingredients you provide. 
